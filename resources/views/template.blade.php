@@ -10,12 +10,25 @@
     h2 {
         margin-top: 20px;
     }
+    .card {
+    width: auto; /* Mengatur lebar card sesuai dengan konten di dalamnya */
+    max-width: 100%; /* Mengatur lebar maksimum card agar tidak melebihi lebar parent container */
+        }
+
+    .card-body {
+    padding: 0; /* Menghapus padding di dalam card body */
+    }
+
+    .card-body video {
+    width: 100%; /* Mengatur lebar video agar sesuai dengan lebar card body */
+    height: auto; /* Mengatur tinggi video agar sesuai dengan proporsi aslinya */
+}
     </style>
 </head>
 <body class="p-3 m-0 border-0 bd-example m-0 border-0">
-    <nav class="navbar navbar-expand-lg bg-secondary">
+    <nav class="navbar navbar-expand-lg" style="background-color: #cba7c1;" >
         <div class="container">
-            <a class="navbar-brand" href="#">Vidio</a>
+            <a class="navbar-brand"  href="#">Vidio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,25 +47,6 @@
             </div>
         </div>
     </nav>
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    
-    
     <script>
     function showLogoutForm() {
         // Menampilkan form logout
@@ -72,3 +66,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
+
+

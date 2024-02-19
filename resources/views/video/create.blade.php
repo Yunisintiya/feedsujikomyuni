@@ -7,7 +7,7 @@
             <h2>Create New Video</h2>
         </div>
         <div class="float-right">
-            <a class="btn btn-secondary" href="{{ route('vidio.index') }}"> Kembali</a>
+            <a class="btn btn-secondary" style="background-color: #cba7c1;" href="{{ route('vidio.index') }}"> Kembali</a>
         </div>
     </div>
 </div>
@@ -26,7 +26,7 @@
 <form method="post" action="{{ route('vidio.store') }}" enctype="multipart/form-data">
     @csrf
 
-     <div class="row">
+    <div class="row">
         {{-- <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>User:</strong>
@@ -46,9 +46,8 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" style="background-color: #cba7c1;">Submit</button>
         </div>
     </div>
-
 </form>
 @endsection

@@ -12,10 +12,10 @@ class VideoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
         $videos = Video::latest()->paginate(2);
-        return view('video.index', compact('videos')); // Pastikan view dengan nama yang tepat tersedia
+        return view('video.index', compact('videos'));
     }  
 
     /**
@@ -44,7 +44,7 @@ class VideoController extends Controller
 
         if ($request->hasFile('video')) {
             $videosFile = $request->file('video');
-            $videosName = time() . '.' . $videoFile->getClientOriginalExtension();
+            $videosName = time() . '.' . $videosFile->getClientOriginalExtension();
             $destinationPath = 'video/';
             $videosFile->move($destinationPath, $videosName);
             $videos->video = $videosName;
@@ -60,18 +60,13 @@ class VideoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Video $videos)
+    public function destroy($id)
     {
-        try {
-            // Temukan video berdasarkan ID
-            $videos = Video::findOrFail($videos->id);
-
-            // Hapus video dari database
-            $videos->delete();
-
-            return redirect()->route('vidio.index')->with('success', 'Video berhasil dihapus.');
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Gagal menghapus Video: ' . $e->getMessage());
-        }
+        $video = Video::findOrFail($id);
+        // Hapus video dari penyimpanan jika perlu
+        Storage::delete($video->video);
+        // Hapus video dari database
+        $video->delete();
+        return redirect()->route('vidio.index')->with('success', 'Video berhasil dihapus');
     }
 }

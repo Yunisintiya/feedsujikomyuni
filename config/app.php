@@ -5,6 +5,21 @@ use Illuminate\Support\ServiceProvider;
 
 return [
 
+     /*
+    |--------------------------------------------------------------------------
+    | Pagination
+    |--------------------------------------------------------------------------
+    |
+    | This option controls the default pagination driver that will be used
+    | by the framework when a pagination request is detected. You may change
+    | this to any of the other built-in drivers supported by Laravel.
+    |
+    | Supported: "simple", "bootstrap-4", "bootstrap-5", "semantic-ui", "tailwind"
+    |
+    */
+
+    'pagination' => 'bootstrap-5',
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
